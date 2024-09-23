@@ -24,7 +24,7 @@ summary_stats = data.select([
 ])
 
 # Sort the data by 'Total' column in descending order and take the top 50 countries
-top_countries = data.sort('Total', reverse=True).head(50)
+top_countries = data.sort('Total', descending=True).head(50)
 
 # Create a bar chart for total medals by top 50 countries
 plt.figure(figsize=(10, 6))
