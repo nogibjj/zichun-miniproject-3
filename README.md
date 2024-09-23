@@ -1,69 +1,48 @@
+# Mini Project 3 - Polars vs Pandas Comparison
 
-# Zichun Mini Project 1
+This project compares the performance of Polars and Pandas for performing descriptive statistics and generating data visualizations.
 
-This is a Python project template with a functioning `Makefile`, a `.devcontainer`, and basic setup for CI/CD using GitHub Actions. The project also includes unit tests and linting with `pylint`.
+## Dataset
 
-## Links
+The dataset used for this analysis is the 'medals_total.csv' file, which contains the total medals won by various countries in the Paris 2024 Olympic Games.
 
-- **Version control Source Code Management Repository**: [github repo](https://github.com/nogibjj/zichun-miniproject-1).
-- **Link to successful CI/CD run**: [Link to GitHub Actions](https://github.com/nogibjj/zichun-miniproject-1/actions).
+## Features
 
+1. **Descriptive Statistics (Polars)**:
+   - Mean, median, standard deviation, min, and max of total medals won by all countries.
 
-## Project Setup
+2. **Data Visualization**:
+   - A bar chart showing the total medals won by the top 50 countries.
 
-### 1. Clone the Repository
+3. **Output**:
+   - Summary statistics for the entire dataset saved as `summary_report.md`.
+   - A visualization saved as `total_medals_by_top_50_countries.png`.
 
-```bash
-git clone https://github.com/your-username/zichun-miniproject-1.git
-cd zichun-miniproject-1
-```
+## Instructions
 
-### 2. Install Dependencies
+1. **Clone the repository**:
+    ```bash
+    git clone <your-repo-url>
+    cd <repo-directory>
+    ```
 
-You can install the required Python dependencies by running:
+2. **Install the required dependencies**:
+    Ensure you have Python 3.6+ installed. Then, install the required Python packages:
+    ```bash
+    pip install -r requirements.txt
+    ```
 
-```bash
-make setup
-```
+3. **Run the script**:
+    Run the Python script to generate the summary statistics and the visualization.
+    ```bash
+    python src/main.py
+    ```
 
-This will install all the packages listed in `requirements.txt`.
+4. **CI/CD Pipeline**:
+    The CI/CD pipeline automatically runs the script, generates the markdown report and visualization, and pushes them to the repository if there are changes.
 
-### 3. Running the Linter
+## Deliverables
 
-To ensure your code follows proper Python style guidelines, run:
-
-```bash
-make lint
-```
-
-This will run `pylint` on the `src/main.py` file.
-
-### 4. Running Tests
-
-To run the unit tests using `pytest`, use the following command:
-
-```bash
-make test
-```
-
-The `Makefile` is set up to run the tests in the `tests/` directory.
-
-## Usage Instructions
-
-The project contains a simple `add` function and a main script. You can run the main script as follows:
-
-```bash
-python src/main.py
-```
-
-The `main.py` file will print "Hello, world!" when executed.
-
-## CI/CD Pipeline
-
-This project uses GitHub Actions for Continuous Integration (CI). The workflow is defined in the `.github/workflows/ci.yml` file and runs automatically on every push to the main branch. The CI performs the following actions:
-- Linting with `pylint`
-- Running unit tests with `pytest`
-
-## Development Environment with Devcontainer
-
-A development container is included to ensure consistency in development environments. The `.devcontainer` folder contains a `Dockerfile` and `devcontainer.json` file for setting up the containerized development environment in tools like Visual Studio Code.
+1. **Repository URL**: [Link to the public repository](#)
+2. **Summary Report**: The `summary_report.md` file containing descriptive statistics.
+3. **Visualization**: The `total_medals_by_top_50_countries.png` showing the total medals won by the top 50 countries.
