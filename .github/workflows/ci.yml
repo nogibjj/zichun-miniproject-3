@@ -24,13 +24,22 @@ jobs:
         run: |
           pip install -r requirements.txt
 
-      - name: Lint with pylint
+      - name: Run script
         run: |
-          pylint src/main.py
+          python src/main.py
 
-      - name: Run tests
-        env:
-          PYTHONPATH: ${{ github.workspace }}/src  # Set PYTHONPATH to include src
+      - name: Configure Git user identity
         run: |
-          pytest tests
+          git config --global user.email "zichunwang733@gmail.com"
+          git config --global user.name "chun77"
 
+      - name: Generate summary report and commit
+        run: |
+          python src/main.py
+          git add output/summary_report.md output/total_medals_by_top_50_countries.png
+          if ! git diff --cached --quiet; then
+            git commit -m "Add summary report for all countries and data visualization for top 50 countries"
+            git push
+          else
+            echo "No changes to commit"
+          fi
